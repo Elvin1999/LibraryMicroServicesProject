@@ -12,7 +12,6 @@ namespace BookApi.Data.Context
         public LibraryContext(DbContextOptions<LibraryContext> options)
             : base(options)
         {
-
         }       
         public DbSet<Book> Books { get; set; }
         public DbSet<Rent> Rents { get; set; }

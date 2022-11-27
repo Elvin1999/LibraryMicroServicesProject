@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Book.Api.Data\BookApi.Data.csproj" />
+    <ProjectReference Include="..\Book.Api.Infrastructure\BookApi.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
