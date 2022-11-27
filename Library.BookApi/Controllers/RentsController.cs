@@ -25,7 +25,6 @@ namespace Library.BookApi.Controllers
             {
                 BookId = rent.BookId,
                 Fullname = rent.Fullname,
-                Id = rent.Id,
                 Quantity = rent.Quantity,
             };
             return dto;
@@ -42,20 +41,18 @@ namespace Library.BookApi.Controllers
                 {
                     BookId = d.BookId,
                     Fullname = d.Fullname,
-                    Id = d.Id,
                     Quantity = d.Quantity,
                 };
             });
             return dtos.ToList();
         }
         [HttpPost("")]
-        public RentDto Add(RentDto rent)
+        public RentDto Add([FromBody]RentDto rent)
         {
             _rentService.Add(new Rent
             {
                 BookId = rent.BookId,
                 Fullname = rent.Fullname,
-                Id = rent.Id,
                 Quantity = rent.Quantity,
             });
             return rent;

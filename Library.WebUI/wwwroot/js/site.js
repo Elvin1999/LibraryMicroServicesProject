@@ -13,20 +13,33 @@ function RentBook(id) {
     console.log(id);
 }
 
+
+
+
+
 function SubmitRent() {
     let f = document.getElementById("fullname");
     let q = document.getElementById("quantity");
 
- 
-        $.post(gatewayUrl+"r",
-            {
-                fullname: f,
-                quantity: q,
-                bookId: book_id
-            },
-            function (data, status) {
-               // alert("Data: " + data + "\nStatus: " + status);
-            });
+    let obj = {
+        fullname: f.value,
+        quantity: Number(q.value),
+        bookId: Number(book_id)
+    };
+    $.ajax({
+        method: "POST",
+        url: gatewayUrl + "ra",
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(obj),
+        success: function (result) {
+             alert('Successfully added Data ');
+            console.log(result);
+        },
+        error: function () {
+            alert('Failed to add the Data');
+            console.log('Failed ');
+        }
+    })
 }
 
 

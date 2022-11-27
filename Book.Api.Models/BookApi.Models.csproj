@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Book.Api.Data\BookApi.Data.csproj" />
+  </ItemGroup>
+
 </Project>
